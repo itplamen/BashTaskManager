@@ -273,7 +273,7 @@ function __start_scheduler() {
 					sed -i $line_number"s/.*/$task_name|$next_date|$task_days_repeat/" $CONFIG_PATH"/"$TIMETABLE_FILE
 				fi
 							
-				powershell -ExecutionPolicy Bypass -File $CONFIG_PATH"/"$NOTIFICATION_SENDER_FILE $title $details $datetime_created
+				powershell -ExecutionPolicy Bypass -File $CONFIG_PATH"/"$NOTIFICATION_SENDER_FILE "$title" "$details" "$datetime_created"
 			fi
 		done < $CONFIG_PATH"/"$TIMETABLE_FILE
 		
